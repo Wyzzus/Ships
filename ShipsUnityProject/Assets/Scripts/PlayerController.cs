@@ -9,7 +9,6 @@ public class PlayerController : Controller
 {
 
     public ShipEntity CurrentShipEntity;
-    public Transform Pointer;
     public Vector3 Direction;
     
     public override void Start()
@@ -26,15 +25,17 @@ public class PlayerController : Controller
 
     public void Movement()
     {
-        Direction.x = Input.GetAxis("Horizontal") * 5;
-        Direction.z = Mathf.Clamp(Input.GetAxis("Vertical"), 0, 1) * 10;
-        Direction.Normalize();
-
-        Pointer.localPosition = Vector3.Lerp(Pointer.localPosition, (Direction + Vector3.forward) * 5, 0.5f);
-
+        float forwardPower = Mathf.Clamp(Input.GetAxis("Vertical"), 0, 1) * 5;
+        float sidePower = Input.GetAxis("Horizontal");
+        #region MovePoint Calculation
+        Direction = transform.forward * forwardPower + (transform.forward * Mathf.Abs(sidePower) + transform.right * sidePower);
+        Direction = transform.position + transform.forward + Direction;
+        Debug.DrawRay(transform.position, Direction - transform.position, Color.red);
+        Vector3 MovePoint = Vector3.Lerp(transform.position, Direction, 0.5f);
+        #endregion
         if (Direction.magnitude > 0.2f)
         {
-            CurrentShipEntity.MoveTo(Pointer.position);
+            CurrentShipEntity.MoveTo(MovePoint);
         }
     }
 }
