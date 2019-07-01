@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TestOcean
-  m_Shader: {fileID: -6465566751694194690, guid: dc066e9fe0b8d8e4fb793ab71e87744a,
+  m_Shader: {fileID: -6465566751694194690, guid: ecafc364acc54244d894abe1a0891e43,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -63,8 +63,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_33F3247C: 1.5
-    - Vector1_45E5D9A7: 0.1
-    - Vector1_82F5D719: 0.2
+    - Vector1_45E5D9A7: 0.01
+    - Vector1_82F5D719: 0.02
     - Vector1_D065D626: 20
     - _AlphaClip: 0
     - _Blend: 0
@@ -88,7 +88,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_83255305: {r: 0, g: 0.5499783, b: 1, a: 0}
+    - Color_83255305: {r: 0, g: 0.2848685, b: 0.5188679, a: 1}
+    - Color_D4B5F8F1: {r: 0, g: 0.39055493, b: 0.5566038, a: 0}
     - Color_F22E4415: {r: 0.108490564, g: 0.7340404, b: 1, a: 1}
     - _BaseColor: {r: 0, g: 0.8388891, b: 1, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
