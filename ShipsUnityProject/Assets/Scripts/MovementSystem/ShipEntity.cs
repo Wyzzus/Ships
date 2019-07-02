@@ -6,18 +6,50 @@ using UnityEngine;
 //Управляет компонентами корабля
 public class ShipEntity : MovableEntity
 {
+    public List<FireComponent> LeftCannons;
+    public List<FireComponent> RightCannons;
+
     public override void Start()
     {
         base.Start();
-    }
-    
-    void Update()
-    {
-        
+        GetSides();
     }
 
-    public void MoveTo(Vector3 point)
+    public void GetSides()
     {
-        Motor.MoveTo(point);
+        FireComponent[] Sides = GetComponentsInChildren<FireComponent>();
+        foreach (FireComponent side in Sides)
+        {
+            if (side.transform.localPosition.x > 0)
+            {
+                RightCannons.Add(side);
+            }
+            else
+            {
+                LeftCannons.Add(side);
+            }
+        }
+    }
+
+    public void Fire()
+    {
+        FireLeft();
+        FireRight();
+    }
+
+    public void FireLeft()
+    {
+        foreach (FireComponent fc in LeftCannons)
+        {
+            fc.FireAll();
+        }
+    }
+
+    public void FireRight()
+    {
+        foreach (FireComponent fc in RightCannons)
+        {
+            fc.FireAll();
+        }
     }
 }

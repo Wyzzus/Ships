@@ -21,10 +21,12 @@ public class PlayerController : Controller
     {
         base.Update();
         Movement();
+        Shooting();
     }
 
     public void Movement()
     {
+        //TODO: Переделать систему ввода
         float forwardPower = Mathf.Clamp(Input.GetAxis("Vertical"), 0, 1) * 5;
         float sidePower = Input.GetAxis("Horizontal");
         #region MovePoint Calculation
@@ -36,6 +38,18 @@ public class PlayerController : Controller
         if (Direction.magnitude > 0.2f)
         {
             CurrentShipEntity.MoveTo(MovePoint);
+        }
+    }
+
+    public void Shooting()
+    {
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            CurrentShipEntity.FireLeft();
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            CurrentShipEntity.FireRight();
         }
     }
 }
