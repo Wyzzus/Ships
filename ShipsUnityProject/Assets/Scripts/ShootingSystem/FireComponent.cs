@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireComponent : EntityComponent
 {
     public List<Transform> FirePoints;
+    public float ShotPower = 1000f;
     [Header ("CoolDown")]
     [SerializeField]
     public float CoolDown;
@@ -45,7 +46,7 @@ public class FireComponent : EntityComponent
         foreach (Transform firePoint in firePoints)
         {
             GameObject projectile = Instantiate<GameObject>(Projectile, firePoint.position, firePoint.rotation);
-            projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * 1000f);
+            projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * ShotPower);
             Destroy(projectile, TimeToLive);
         }
         CoolDownCounter = CoolDown;
