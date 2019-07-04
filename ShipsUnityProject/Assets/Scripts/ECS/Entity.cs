@@ -6,7 +6,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [Header("ECS")]
-    public static List<EntityComponent> Components;
+    public List<EntityComponent> Components;
     
     public virtual void Start()
     {
