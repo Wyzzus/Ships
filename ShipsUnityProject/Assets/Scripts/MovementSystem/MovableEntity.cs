@@ -17,5 +17,9 @@ public class MovableEntity : Entity
         Motor = (MotorComponent)GetComponentOfType<MotorComponent>();
     }
 
-    
+    public void MoveTo(Vector3 point)
+    {
+        Motor.MoveTo(point);
+    }
+
 }

@@ -31,4 +31,17 @@ public class Entity : MonoBehaviour
         }
         return component;
     }
+
+    public List<EntityComponent> GetComponentsOfType<T>()
+    {
+        List<EntityComponent> components = new List<EntityComponent>();
+        foreach (EntityComponent ec in Components)
+        {
+            if (ec.GetType().Equals(typeof(T)))
+            {
+                components.Add(ec);
+            }
+        }
+        return components;
+    }
 }
