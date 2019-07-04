@@ -15,6 +15,8 @@ public class FireComponent : EntityComponent
     [Header("Projectile")]
     public GameObject Projectile;
     public float TimeToLive;
+    public float ShootDelay = 1f;
+    public Vector3 Deviation;
 
     public override void Start()
     {
@@ -38,18 +40,25 @@ public class FireComponent : EntityComponent
     public void FireAll()
     {
         if(CanShoot)
-            Fire(FirePoints);
+            StartCoroutine(FireCoroutine(FirePoints));
     }
 
-    public void Fire(List<Transform> firePoints)
+    public IEnumerator FireCoroutine(List<Transform> firePoints)
     {
+        WaitForSeconds delay = new WaitForSeconds(Random.Range(0, ShootDelay));
+        CoolDownCounter = CoolDown;
         foreach (Transform firePoint in firePoints)
         {
-            GameObject projectile = Instantiate<GameObject>(Projectile, firePoint.position, firePoint.rotation);
+            float x = firePoint.rotation.eulerAngles.x + Random.Range(-Deviation.x, Deviation.x);
+            float y = firePoint.rotation.eulerAngles.y + Random.Range(-Deviation.y, Deviation.y);
+            float z = 0;
+            Quaternion startRotation = Quaternion.Euler(x, y, z);
+            GameObject projectile = Instantiate<GameObject>(Projectile, firePoint.position, startRotation);
             projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * ShotPower);
             Destroy(projectile, TimeToLive);
+            yield return delay;
         }
-        CoolDownCounter = CoolDown;
+        yield return null;
     }
 
     public void Update()
