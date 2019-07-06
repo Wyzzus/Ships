@@ -827,7 +827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &211547542
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -884,7 +884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211547541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -500, y: 0, z: -500}
+  m_LocalPosition: {x: -500, y: -10, z: -500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1947,16 +1947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ed5afe771be35478662f2139ebb27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoints: []
-  ShotPower: 80000
-  CoolDown: 2
-  CoolDownCounter: 0
-  CanShoot: 0
-  Projectile: {fileID: 1918824090923776549, guid: d40d9ea50d8bf624a97374d2a412059a,
-    type: 3}
-  TimeToLive: 2
-  ShootDelay: 0.1
-  Deviation: {x: 0, y: 0, z: 0}
 --- !u!1 &645077968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,16 +2550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ed5afe771be35478662f2139ebb27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoints: []
-  ShotPower: 80000
-  CoolDown: 2
-  CoolDownCounter: 0
-  CanShoot: 0
-  Projectile: {fileID: 1918824090923776549, guid: d40d9ea50d8bf624a97374d2a412059a,
-    type: 3}
-  TimeToLive: 2
-  ShootDelay: 0.1
-  Deviation: {x: 1, y: 1, z: 0}
 --- !u!1 &768842774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,16 +3382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ed5afe771be35478662f2139ebb27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoints: []
-  ShotPower: 80000
-  CoolDown: 2
-  CoolDownCounter: 0
-  CanShoot: 0
-  Projectile: {fileID: 1918824090923776549, guid: d40d9ea50d8bf624a97374d2a412059a,
-    type: 3}
-  TimeToLive: 2
-  ShootDelay: 0.1
-  Deviation: {x: 1, y: 1, z: 0}
 --- !u!1 &1258276834
 GameObject:
   m_ObjectHideFlags: 0
@@ -9372,16 +9342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ed5afe771be35478662f2139ebb27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoints: []
-  ShotPower: 80000
-  CoolDown: 10
-  CoolDownCounter: 0
-  CanShoot: 0
-  Projectile: {fileID: 1918824090923776549, guid: d40d9ea50d8bf624a97374d2a412059a,
-    type: 3}
-  TimeToLive: 2
-  ShootDelay: 0.1
-  Deviation: {x: 0, y: 0, z: 0}
 --- !u!1 &2072202279
 GameObject:
   m_ObjectHideFlags: 0
