@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: OceanMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 7ed43b565571c1543ac247d205b0a5d9,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_39E7E48:
+        m_Texture: {fileID: 2800000, guid: 56b4ff149c5733440aa442e72c81296e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_66E407DD:
+        m_Texture: {fileID: 2800000, guid: 27af0ceb8f8cc1d4c98311d9196c806a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_4CE0975A: 2.5
+    - Vector1_4F314091: 0
+    - Vector1_5DD2EDCC: 0.4
+    - Vector1_692D7E58: 1.2
+    - Vector1_BA74B7C6: 0.75
+    - Vector1_CA0450C5: 0.3
+    - Vector1_D37F3206: 3
+    - Vector1_DABA8692: 0.39
+    - Vector1_F059B893: 1
+    - Vector1_FC90E417: 0.15
+    - Vector1_FD7154C7: 10
+    m_Colors:
+    - Color_1F282BED: {r: 0, g: 0.7426901, b: 1, a: 1}
+    - Color_75C537FF: {r: 0, g: 0.49983042, b: 0.6698113, a: 0}

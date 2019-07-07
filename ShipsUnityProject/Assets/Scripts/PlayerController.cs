@@ -15,6 +15,7 @@ public class PlayerController : Controller
     {
         base.Start();
         CurrentShipEntity = GetComponent<ShipEntity>();
+        Camera.main.depthTextureMode = DepthTextureMode.Depth;
     }
     
     public override void Update()
