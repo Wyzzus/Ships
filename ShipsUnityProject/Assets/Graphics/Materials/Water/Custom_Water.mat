@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3001
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _DepthFactor: 1
-    - _DepthMaxDistance: 20.57
+    - _DepthMaxDistance: 100
     - _DistortStrength: 1
     - _ExtraHeight: 0.86
     - _FoamMaxDistance: 4.13
@@ -53,7 +53,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DepthGradientDeep: {r: 0.08599996, g: 0.40699995, b: 1, a: 0}
-    - _DepthGradientShallow: {r: 0, g: 0.22785635, b: 0.3490566, a: 1}
+    - _DepthGradientShallow: {r: 0, g: 0.22785631, b: 0.34905657, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
     - _SurfaceNoiseScroll: {r: 0.01, g: 0.01, b: 0, a: 0}
