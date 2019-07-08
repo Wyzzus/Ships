@@ -17,15 +17,18 @@ public class MotorComponent : EntityComponent
 
     public void MoveTo(Vector3 point)
     {
-        //Условие прописано на всякий случай
-        //Если вдруго пропадет галочка Auto Braking у NavMeshAgent
-        if (Vector3.Distance(point, transform.position) > Agent.stoppingDistance)
+        if (Agent && Agent.enabled)
         {
-            Agent.SetDestination(point);
-        }
-        else
-        {
-            Agent.ResetPath();
+            //Условие прописано на всякий случай
+            //Если вдруго пропадет галочка Auto Braking у NavMeshAgent
+            if (Vector3.Distance(point, transform.position) > Agent.stoppingDistance)
+            {
+                Agent.SetDestination(point);
+            }
+            else
+            {
+                Agent.ResetPath();
+            }
         }
     }
 }
