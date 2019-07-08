@@ -698,7 +698,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 5.0000005, y: 0.0000001811353, z: 5.0000024}
+    m_Extent: {x: 5.0000005, y: 0.0000001811353, z: 5.000002}
   m_DirtyAABB: 0
 --- !u!1 &94450933
 GameObject:
@@ -1944,19 +1944,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 639983467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ed5afe771be35478662f2139ebb27d, type: 3}
+  m_Script: {fileID: 11500000, guid: f203472776b8f0e4eb51411417d64687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoints: []
   ShotPower: 80000
-  CoolDown: 2
+  CoolDown: 1
   CoolDownCounter: 0
-  CanShoot: 0
-  Projectile: {fileID: 1918824090923776549, guid: d40d9ea50d8bf624a97374d2a412059a,
+  CanShoot: 1
+  Projectile: {fileID: 1918824090923776549, guid: 0a4454682c8a2ee478fb6dd36dcff13a,
     type: 3}
   TimeToLive: 2
   ShootDelay: 0.1
-  Deviation: {x: 0, y: 0, z: 0}
+  Deviation: {x: 1, y: 1, z: 0}
 --- !u!1 &645077968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,15 +2557,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 726514924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ed5afe771be35478662f2139ebb27d, type: 3}
+  m_Script: {fileID: 11500000, guid: f203472776b8f0e4eb51411417d64687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoints: []
   ShotPower: 80000
-  CoolDown: 2
+  CoolDown: 1
   CoolDownCounter: 0
-  CanShoot: 0
-  Projectile: {fileID: 1918824090923776549, guid: d40d9ea50d8bf624a97374d2a412059a,
+  CanShoot: 1
+  Projectile: {fileID: 1918824090923776549, guid: 0a4454682c8a2ee478fb6dd36dcff13a,
     type: 3}
   TimeToLive: 2
   ShootDelay: 0.1
@@ -3399,15 +3399,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1256182456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ed5afe771be35478662f2139ebb27d, type: 3}
+  m_Script: {fileID: 11500000, guid: f203472776b8f0e4eb51411417d64687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoints: []
   ShotPower: 80000
-  CoolDown: 2
+  CoolDown: 1
   CoolDownCounter: 0
-  CanShoot: 0
-  Projectile: {fileID: 1918824090923776549, guid: d40d9ea50d8bf624a97374d2a412059a,
+  CanShoot: 1
+  Projectile: {fileID: 1918824090923776549, guid: 0a4454682c8a2ee478fb6dd36dcff13a,
     type: 3}
   TimeToLive: 2
   ShootDelay: 0.1
@@ -8551,6 +8551,7 @@ GameObject:
   - component: {fileID: 1583995805}
   - component: {fileID: 1583995807}
   - component: {fileID: 1583995808}
+  - component: {fileID: 1583995809}
   m_Layer: 0
   m_Name: TestShip
   m_TagString: Untagged
@@ -8642,6 +8643,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e580b7125e60c054d8e27b6ab0bb83f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1583995809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583995803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28747edaef1927b46bf6b56741e1549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 0
+  Name: 
+  FractionID: 0
+  BaseHP: 100
+  CurrentHP: 0
+  Alive: 1
+  BaseMoveSpeed: 1
+  CurrentMoveSpeed: 0
+  BaseTurnSpeed: 1
+  CurrentTurnSpeed: 0
+  CanMove: 1
 --- !u!1 &1605885356
 GameObject:
   m_ObjectHideFlags: 0
@@ -9369,19 +9393,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2049161054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ed5afe771be35478662f2139ebb27d, type: 3}
+  m_Script: {fileID: 11500000, guid: f203472776b8f0e4eb51411417d64687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoints: []
   ShotPower: 80000
-  CoolDown: 10
+  CoolDown: 1
   CoolDownCounter: 0
-  CanShoot: 0
-  Projectile: {fileID: 1918824090923776549, guid: d40d9ea50d8bf624a97374d2a412059a,
+  CanShoot: 1
+  Projectile: {fileID: 1918824090923776549, guid: 0a4454682c8a2ee478fb6dd36dcff13a,
     type: 3}
   TimeToLive: 2
   ShootDelay: 0.1
-  Deviation: {x: 0, y: 0, z: 0}
+  Deviation: {x: 1, y: 1, z: 0}
 --- !u!1 &2072202279
 GameObject:
   m_ObjectHideFlags: 0
