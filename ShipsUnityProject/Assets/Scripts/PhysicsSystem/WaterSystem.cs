@@ -27,10 +27,10 @@ public class WaterSystem : MonoBehaviour
     }
 
 
-    public float GetWaterLine(Vector3 currentPosition)
+    public float GetWaterLine(Vector3 currentPosition, Vector3 offset)
     {
-        Vector3 offset = transform.position;
-        Vector3 pos = transform.TransformVector(currentPosition);
+        //offset = currentPosition;
+        Vector3 pos = (currentPosition);
         Vector3 UV = new Vector3(pos.x + Time.time * WaveSpeed, 0, pos.z + Time.time * WaveSpeed);
         Vector3 res = Vector3.up * Mathf.PerlinNoise((UV.x + offset.x) * WaveScale, (UV.z + offset.z) * WaveScale) * WaveStrength;
         return res.y;
