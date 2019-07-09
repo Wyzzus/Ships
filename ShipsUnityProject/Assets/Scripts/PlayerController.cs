@@ -31,12 +31,13 @@ public class PlayerController : Controller
         float forwardPower = Mathf.Clamp(Input.GetAxis("Vertical"), 0, 1) * 5;
         float sidePower = Input.GetAxis("Horizontal");
         #region MovePoint Calculation
-        Direction = transform.forward * forwardPower + (transform.forward * Mathf.Abs(sidePower) + transform.right * sidePower);
-        Direction = transform.position + transform.forward + Direction;
+        Direction = transform.forward + (transform.forward * Mathf.Abs(sidePower) + transform.right * sidePower);
+        Direction = transform.position + transform.forward + Direction * forwardPower;
         Debug.DrawRay(transform.position, Direction - transform.position, Color.red);
         Vector3 MovePoint = Vector3.Lerp(transform.position, Direction, 0.5f);
         #endregion
-        if (Direction.magnitude > 0.2f)
+        //if (Direction.magnitude > 2f)
+        //if(Mathf.Abs(forwardPower) > 0 || Mathf.Abs(sidePower) > 0)
         {
             CurrentShipEntity.MoveTo(MovePoint);
         }

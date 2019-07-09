@@ -46,16 +46,16 @@ namespace ProceduralNoiseProject
 
             Left = -objectToFLoat.right * 5;
             Left.y = WaterSystem.instance.GetWaterLine(objectToFLoat.TransformPoint(Left), Vector3.zero) - WaterLevel;
-            Debug.DrawRay(pos, Left, Color.blue);
+            //Debug.DrawRay(pos, Left, Color.blue);
             Right = objectToFLoat.right * 5;
             Right.y = WaterSystem.instance.GetWaterLine(objectToFLoat.TransformPoint(Right), Vector3.zero) - WaterLevel;
-            Debug.DrawRay(pos, Right, Color.green);
+            //Debug.DrawRay(pos, Right, Color.green);
             Front = objectToFLoat.forward * 3;
             Front.y = WaterSystem.instance.GetWaterLine(objectToFLoat.TransformPoint(Front), Vector3.zero) - WaterLevel;
-            Debug.DrawRay(pos, Front, Color.red);
+            //Debug.DrawRay(pos, Front, Color.red);
             Back = -objectToFLoat.forward * 3;
             Back.y = WaterSystem.instance.GetWaterLine(objectToFLoat.TransformPoint(Back), Vector3.zero) - WaterLevel;
-            Debug.DrawRay(pos, Back, Color.magenta);
+            //Debug.DrawRay(pos, Back, Color.magenta);
             float yRot = transform.rotation.eulerAngles.y;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(-GetAngle(Front, Back), yRot, GetAngle(Right, Left)), PitchingT * Time.deltaTime);
             
