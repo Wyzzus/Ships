@@ -234,7 +234,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh345548
+  m_Name: pb_Mesh16510
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1795,7 +1795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &640319115
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -3021,7 +3021,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh345512
+  m_Name: pb_Mesh16474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8148,11 +8148,11 @@ MonoBehaviour:
   WaterLevel: 7.6306286
   WaterOffset: 0
   Center: {x: 0, y: 0, z: 0}
-  Left: {x: -4.9969797, y: 5.3296876, z: 0.046784732}
-  Right: {x: 4.9969797, y: 4.093477, z: -0.046784732}
-  Front: {x: 0.04966279, y: 4.8207803, z: 4.9990244}
-  Back: {x: -0.04966279, y: 5.340418, z: -4.9990244}
-  BouncingT: 1
+  Left: {x: 0, y: 0, z: 0}
+  Right: {x: 0, y: 0, z: 0}
+  Front: {x: 0, y: 0, z: 0}
+  Back: {x: 0, y: 0, z: 0}
+  BouncingT: 4
   PitchingT: 1
   SidePitchPower: 0.3
 --- !u!1 &1596730412
@@ -8810,7 +8810,7 @@ PrefabInstance:
     - target: {fileID: 266262614731062018, guid: a250cbf8cdde6d0459ef8db609686759,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -122.7
       objectReference: {fileID: 0}
     - target: {fileID: 266262614731062018, guid: a250cbf8cdde6d0459ef8db609686759,
         type: 3}
@@ -8820,7 +8820,7 @@ PrefabInstance:
     - target: {fileID: 266262614731062018, guid: a250cbf8cdde6d0459ef8db609686759,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: 119.7
       objectReference: {fileID: 0}
     - target: {fileID: 266262614731062018, guid: a250cbf8cdde6d0459ef8db609686759,
         type: 3}
@@ -8866,6 +8866,16 @@ PrefabInstance:
         type: 3}
       propertyPath: WaveSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 266262614731062017, guid: a250cbf8cdde6d0459ef8db609686759,
+        type: 3}
+      propertyPath: WaveScale
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 266262614731062017, guid: a250cbf8cdde6d0459ef8db609686759,
+        type: 3}
+      propertyPath: WaveStrength
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a250cbf8cdde6d0459ef8db609686759, type: 3}
