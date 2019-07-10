@@ -37,23 +37,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SurfaceNoise:
         m_Texture: {fileID: 2800000, guid: 87ce03bd447ccce48bbff87ac0d8355f, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0, y: 0}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _DepthFactor: 1
     - _DepthMaxDistance: 100
     - _DistortStrength: 1
     - _ExtraHeight: 0.86
-    - _FoamMaxDistance: 4.13
-    - _FoamMinDistance: 0.04
-    - _SurfaceDistortionAmount: 1
+    - _FoamMaxDistance: 0
+    - _FoamMinDistance: 0
+    - _SurfaceDistortionAmount: 0.77
     - _SurfaceNoiseCutoff: 1
     - _WaveAmp: 21.54
     - _WaveSpeed: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DepthGradientDeep: {r: 0.08599996, g: 0.40699995, b: 1, a: 0}
-    - _DepthGradientShallow: {r: 0, g: 0.22785631, b: 0.34905657, a: 1}
+    - _DepthGradientDeep: {r: 0, g: 0.30545005, b: 0.8679245, a: 0}
+    - _DepthGradientShallow: {r: 0, g: 0.40008062, b: 0.6132076, a: 0.4627451}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
-    - _SurfaceNoiseScroll: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - _SurfaceNoiseScroll: {r: 0, g: 0, b: 0, a: 0}
