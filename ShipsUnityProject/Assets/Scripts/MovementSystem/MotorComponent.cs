@@ -11,9 +11,10 @@ public class MotorComponent : EntityComponent
     NavMeshPath Path;
     public LayerMask PathMask = -1;
 
-    public float MoveSpeed = 10;
-    public float TurnSpeed = 1;
-    public float Acceleration = 1;
+    public float MoveSpeed = 10f;
+    public float TurnSpeed = 1f;
+    public float MoveAcceleration = 1f;
+    public float TurnAcceleration = 1f;
     public float CurrrentMoveSpeed = 0;
     public float CurrentTurnSpeed = 0;
     public float StopDistance = 2f;
@@ -29,13 +30,13 @@ public class MotorComponent : EntityComponent
     {
         if (Distance2D(point) > StopDistance)
         {
-            CurrrentMoveSpeed = Mathf.Lerp(CurrrentMoveSpeed, MoveSpeed, Time.deltaTime * Acceleration);
-            CurrentTurnSpeed = Mathf.Lerp(CurrentTurnSpeed, TurnSpeed, Time.deltaTime * Acceleration);
+            CurrrentMoveSpeed = Mathf.Lerp(CurrrentMoveSpeed, MoveSpeed, Time.deltaTime * MoveAcceleration / 10f);
+            CurrentTurnSpeed = Mathf.Lerp(CurrentTurnSpeed, TurnSpeed, Time.deltaTime * TurnAcceleration / 10f);
         }
         else
         {
-            CurrrentMoveSpeed = Mathf.Lerp(CurrrentMoveSpeed, 0, Time.deltaTime * Acceleration);
-            CurrentTurnSpeed = Mathf.Lerp(CurrentTurnSpeed, 0, Time.deltaTime * Acceleration);
+            CurrrentMoveSpeed = Mathf.Lerp(CurrrentMoveSpeed, 0, Time.deltaTime * MoveAcceleration / 10f);
+            CurrentTurnSpeed = Mathf.Lerp(CurrentTurnSpeed, 0, Time.deltaTime * TurnAcceleration / 10f);
         }
 
         if (CurrrentMoveSpeed > 0)
@@ -52,7 +53,7 @@ public class MotorComponent : EntityComponent
             {
                 Quaternion lookRot = Quaternion.LookRotation(direction);
                 float yTurn = lookRot.eulerAngles.y;
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, yTurn, transform.rotation.eulerAngles.z), CurrentTurnSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, yTurn, transform.rotation.eulerAngles.z), CurrentTurnSpeed * Time.deltaTime / 10f);
             }
 
         }
