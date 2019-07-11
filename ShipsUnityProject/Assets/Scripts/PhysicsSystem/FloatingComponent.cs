@@ -8,7 +8,6 @@ namespace ProceduralNoiseProject
     {
         // Start is called before the first frame update
         public Transform objectToFLoat;
-        public LayerMask RayMask;
 
         [Header("Points")]
         public float WaterLevel;

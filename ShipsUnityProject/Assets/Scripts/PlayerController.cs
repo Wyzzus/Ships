@@ -46,13 +46,25 @@ public class PlayerController : Controller
 
     public void Shooting()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            CurrentShipEntity.LeftAim(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            CurrentShipEntity.RightAim(true);
+        }
+
         if (Input.GetKeyUp(KeyCode.Q))
         {
             CurrentShipEntity.FireLeft();
+            CurrentShipEntity.LeftAim(false);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
             CurrentShipEntity.FireRight();
+            CurrentShipEntity.RightAim(false);
         }
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 //Компонент управления передвижением обхектов, находящихся на NavMesh'e
-[RequireComponent(typeof(NavMeshAgent))]
 public class MotorComponent : EntityComponent
 {
     NavMeshAgent Agent;
