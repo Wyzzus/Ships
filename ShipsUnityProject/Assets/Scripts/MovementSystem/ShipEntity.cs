@@ -117,7 +117,7 @@ public class ShipEntity : MovableEntity
             }
         }
 
-        Center = new Vector3((MaxZ + MinZ) / 2f, (MaxY + MinY) / 2f);
+        Center = new Vector3(-(MaxZ + MinZ) / 2f, (MaxY + MinY) / 2f);
         Scale = new Vector3(MaxZ - MinZ, MaxY - MinY, 100);
     }
 }
