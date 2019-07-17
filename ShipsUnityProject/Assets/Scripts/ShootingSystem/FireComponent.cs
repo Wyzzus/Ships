@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class FireComponent : EntityComponent
 {
@@ -27,6 +28,7 @@ public class FireComponent : EntityComponent
     {
         base.Start();
         GetFirePoints();
+        //CalculateShootingZone();
     }
 
     public virtual void GetFirePoints()
@@ -78,25 +80,27 @@ public class FireComponent : EntityComponent
             CanShoot = true;
         }
     }
-
-    public void CalculateShootingZone()
+    #region Legacy
+    //Старый расчет зоны выстрела
+    //Оставил потому, что он может еще понадобиться. Но не факт
+    /*public void CalculateShootingZone()
     {
         Vector3 FirstLocal = transform.InverseTransformPoint(FirePoints[0].position);
-        float MaxX = FirstLocal.x;
-        float MinX = FirstLocal.x;
+        float MaxZ = FirstLocal.z;
+        float MinZ = FirstLocal.z;
         float MaxY = FirstLocal.y;
         float MinY = FirstLocal.y;
         foreach (Transform fp in FirePoints)
         {
             Vector3 LocalFP = transform.InverseTransformPoint(fp.position);
-            if (LocalFP.x >= MaxX)
+            if (LocalFP.z >= MaxZ)
             {
-                MaxX = LocalFP.x;
+                MaxZ = LocalFP.z;
             }
 
-            if (LocalFP.x <= MinX)
+            if (LocalFP.z <= MinZ)
             {
-                MinX = LocalFP.x;
+                MinZ = LocalFP.z;
             }
 
             if (LocalFP.y >= MaxY)
@@ -109,18 +113,11 @@ public class FireComponent : EntityComponent
                 MinY = LocalFP.y;
             }
         }
-        Debug.Log("Max X = " + MaxX);
-        Debug.Log("Min X = " + MinX);
-        Debug.Log("Max Y = " + MaxY);
-        Debug.Log("Min Y = " + MinY);
-        ZoneCenter = new Vector3((MaxX + MinX) / 2f, (MaxY + MinY) / 2f);
-        ZoneScale = new Vector3(MaxX - MinX, MaxY - MinY);
-    }
-
-    public float MyAbs(float value)
-    {
-        return value * Mathf.Sign(value);
-    }
+        
+        ZoneCenter = new Vector3((MaxZ + MinZ) / 2f, (MaxY + MinY) / 2f);
+        ZoneScale = new Vector3(MaxZ - MinZ, MaxY - MinY);
+    }*/
+    #endregion
 }
 
 /*

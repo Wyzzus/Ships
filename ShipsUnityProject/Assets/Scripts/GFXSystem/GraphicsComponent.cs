@@ -8,7 +8,11 @@ public class GraphicsComponent : EntityComponent
     public bool AimLeft = false;
     public bool AimRight = false;
     public GameObject LeftAimSight;
+    public Vector3 LeftCenter;
+    public Vector3 LeftScale;
     public GameObject RightAimSight;
+    public Vector3 RightCenter;
+    public Vector3 RightScale;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -22,21 +26,27 @@ public class GraphicsComponent : EntityComponent
     }
 
     #region OnlyPlayerGraphics
-    public void ShowAimLeft(bool value)
+    public void ShowAimLeft(bool value, Vector3 Center, Vector3 Scale)
     {
         AimLeft = value;
+        LeftScale = Scale;
+        LeftCenter = Center;
     }
 
-    public void ShowAimRight(bool value)
+    public void ShowAimRight(bool value, Vector3 Center, Vector3 Scale)
     {
         AimRight = value;
+        RightScale = Scale;
+        RightCenter = Center;
     }
 
-    public void ShowHideAimSight(bool value, GameObject AimSight)
+    public void ShowHideAimSight(bool value, Vector3 Scale, Vector3 Center, GameObject AimSight)
     {
         if (value && !AimSight.activeSelf)
         {
             AimSight.SetActive(true);
+            AimSight.transform.localPosition = Center;
+            AimSight.transform.localScale = Scale;
         }
         else if (!value && AimSight.activeSelf)
         {
@@ -46,8 +56,8 @@ public class GraphicsComponent : EntityComponent
 
     public void ShowHideSights()
     {
-        ShowHideAimSight(AimLeft, LeftAimSight);
-        ShowHideAimSight(AimRight, RightAimSight);
+        ShowHideAimSight(AimLeft, LeftScale, LeftCenter, LeftAimSight);
+        ShowHideAimSight(AimRight, RightScale, RightCenter, RightAimSight);
     }
     #endregion
 }
