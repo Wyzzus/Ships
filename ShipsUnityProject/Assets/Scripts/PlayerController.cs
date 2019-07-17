@@ -31,7 +31,7 @@ public class PlayerController : Controller
         //TODO: Переделать систему ввода
         float forwardPower = Mathf.Clamp(Input.GetAxis("Vertical"), 0, 1) * 10;
         float sidePower = Input.GetAxis("Horizontal");
-        #region MovePoint Calculation
+        #region Direction Calculation
         Direction = transform.forward + (transform.right * sidePower);
         Direction = transform.position + transform.forward + Direction * forwardPower * 2;
         Debug.DrawRay(transform.position, Direction - transform.position, Color.red);
@@ -40,19 +40,30 @@ public class PlayerController : Controller
         //if(Mathf.Abs(forwardPower) > 0 || Mathf.Abs(sidePower) > 0)
         {
             CurrentShipEntity.MoveTo(Direction);
-            //CurrentShipEntity.MoveTo(tracker.position);
         }
     }
 
     public void Shooting()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            CurrentShipEntity.LeftAim(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            CurrentShipEntity.RightAim(true);
+        }
+
         if (Input.GetKeyUp(KeyCode.Q))
         {
             CurrentShipEntity.FireLeft();
+            CurrentShipEntity.LeftAim(false);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
             CurrentShipEntity.FireRight();
+            CurrentShipEntity.RightAim(false);
         }
     }
 }
