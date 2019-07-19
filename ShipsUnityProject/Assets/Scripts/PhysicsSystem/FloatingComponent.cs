@@ -56,7 +56,7 @@ public class FloatingComponent : EntityComponent
         Back.y = WaterSystem.instance.GetWaterLine(FloatingObject.TransformPoint(Back), Vector3.zero) - WaterLevel;
         Debug.DrawRay(pos, Back, Color.magenta);
         float yRot = transform.rotation.eulerAngles.y;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(GetAngle(Front, Back), yRot, GetAngle(Right, Left)), PitchingT * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(GetAngle(Front, Back), yRot, -GetAngle(Right, Left)), PitchingT * Time.deltaTime);
 
         FloatingObject.position = Vector3.Lerp(pos, newPos, BouncingT * Time.deltaTime);
     }

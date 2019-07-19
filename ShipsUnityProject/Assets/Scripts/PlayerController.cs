@@ -9,6 +9,7 @@ public class PlayerController : Controller
 {
 
     public ShipEntity CurrentShipEntity;
+    public CameraEntity CurrentCamera;
     public Vector3 Direction;
     public Transform tracker;
     
@@ -16,13 +17,18 @@ public class PlayerController : Controller
     {
         base.Start();
         CurrentShipEntity = GetComponent<ShipEntity>();
-        Camera.main.depthTextureMode = DepthTextureMode.Depth;
+        CurrentCamera = GameObject.FindGameObjectWithTag("MainCameraEntity").GetComponent<CameraEntity>();
+        //Camera.main.depthTextureMode = DepthTextureMode.Depth;
     }
     
     public override void Update()
     {
         base.Update();
         Movement();
+    }
+
+    public void LateUpdate()
+    {
         Shooting();
     }
 
@@ -45,6 +51,19 @@ public class PlayerController : Controller
 
     public void Shooting()
     {
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            Vector3 point = transform.position - transform.right * 20f;
+            CurrentCamera.LookAtPoint(point);
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            Vector3 point = transform.position + transform.right * 20f;
+            CurrentCamera.LookAtPoint(point);
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             CurrentShipEntity.LeftAim(true);
@@ -59,11 +78,13 @@ public class PlayerController : Controller
         {
             CurrentShipEntity.FireLeft();
             CurrentShipEntity.LeftAim(false);
+            CurrentCamera.ResetLook();
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
             CurrentShipEntity.FireRight();
             CurrentShipEntity.RightAim(false);
+            CurrentCamera.ResetLook();
         }
     }
 }
