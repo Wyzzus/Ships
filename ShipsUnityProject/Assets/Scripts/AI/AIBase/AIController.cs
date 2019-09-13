@@ -13,7 +13,7 @@ public class AIController : Controller
     // Update is called once per frame
     public override void Update()
     {
-        base.Start();
+        base.Update();
     }
 
     public virtual void Behaviuor()

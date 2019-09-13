@@ -4878,13 +4878,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 388174613}
-  - component: {fileID: 388174612}
   - component: {fileID: 388174611}
   - component: {fileID: 388174610}
   - component: {fileID: 388174609}
   - component: {fileID: 388174608}
+  - component: {fileID: 388174614}
+  - component: {fileID: 388174612}
+  - component: {fileID: 388174615}
   m_Layer: 0
-  m_Name: TestShip (1)
+  m_Name: AITestShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4974,15 +4976,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388174607}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f4e26d3ae67c994cb4a73d12ebf8980, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fbc38d84884a7d458808c64ba4e022b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentShipEntity: {fileID: 0}
-  CurrentCamera: {fileID: 0}
-  Direction: {x: 0, y: 0, z: 0}
-  tracker: {fileID: 0}
+  Components: []
+  EnemyFractionsIDs: 
+  FriendFractionsIDs: 
+  Vision: {fileID: 0}
 --- !u!4 &388174613
 Transform:
   m_ObjectHideFlags: 0
@@ -4991,7 +4993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388174607}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -40.6, y: 0, z: 40.6}
+  m_LocalPosition: {x: 3.2, y: 0, z: 84.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1834655895}
@@ -5017,6 +5019,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &388174614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388174607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a7c4b1448caa8429b7ec9bd0215a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VisionZone: {fileID: 0}
+  VisionRadius: 30
+  HasTarget: 0
+  CurrentTarget: {fileID: 0}
+  ChaseDistance: 1000
+--- !u!114 &388174615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388174607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71c7b59d3fd3dd41bba9d2a0da4b36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentShipEntity: {fileID: 0}
+  CurrentShipAI: {fileID: 0}
 --- !u!1 &388489867
 GameObject:
   m_ObjectHideFlags: 0
@@ -6256,7 +6289,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: -0.0000076293945, y: 0, z: 0}
-    m_Extent: {x: 5.0000024, y: 3.2238393, z: 5.0000057}
+    m_Extent: {x: 4.999998, y: 3.2238364, z: 5.0000057}
   m_DirtyAABB: 0
 --- !u!33 &449261760
 MeshFilter:
@@ -7742,8 +7775,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: -0.0000011920929, z: 0}
-    m_Extent: {x: 5, y: 2.7255, z: 5.0000033}
+    m_Center: {x: 0.0000076293945, y: -0.0000038146973, z: 0.0000019073486}
+    m_Extent: {x: 5.0000067, y: 2.7255037, z: 5.0000033}
   m_DirtyAABB: 0
 --- !u!33 &568027232
 MeshFilter:
@@ -17788,7 +17821,7 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.0000076293945, y: 0.00000023841858, z: 0}
+    m_Center: {x: 0.0000076293945, y: -0.0000038146973, z: 0.0000019073486}
     m_Extent: {x: 5.000001, y: 3.5191667, z: 5.0000043}
   m_DirtyAABB: 0
 --- !u!33 &1611718257
@@ -23068,8 +23101,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0.00000047683716, z: 0}
-    m_Extent: {x: 4.999999, y: 2.4497883, z: 5.0000033}
+    m_Center: {x: 0.0000076293945, y: 0, z: 0}
+    m_Extent: {x: 5.000001, y: 2.449789, z: 5.0000033}
   m_DirtyAABB: 0
 --- !u!33 &2095428698
 MeshFilter:
